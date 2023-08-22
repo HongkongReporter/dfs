@@ -1,7 +1,6 @@
 KVStore 
 
-- This assignment makes use of golang
-It requires the golang installation
+- This module requires the golang installation
 
 - To use the server, say for eventual consistency: cd into the directory dkvs/ecdkvs and run:
 go run . PORT
