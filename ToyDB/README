@@ -1,0 +1,33 @@
+KVStore 
+
+- This assignment makes use of golang
+It requires the golang installation
+
+- To use the server, say for eventual consistency: cd into the directory dkvs/ecdkvs and run:
+go run . PORT
+Where PORT is the number for the port the server listens to
+
+Ecdkvs: eventual consistency
+Lcdkvs: linearizable consistency
+Scdkvs: sequential consistency
+
+- To test, cd into the directory client and type:
+go run . PORT
+PORT is the PORT number where the server will listen
+This opens the client process
+e.g. 
+For server: go run . 1234
+For client: go run . 127.0.0.1:1234
+
+The original code has 5 servers spawn, in kvserver.go, line 22
+
+Commands: 
+- get Key
+To fetech the data you saved
+- set Key Value
+Key: the key
+Value:value 
+-kill 
+To let client quit
+
+

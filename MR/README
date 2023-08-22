@@ -1,0 +1,18 @@
+README 
+
+First, make sure you have go 1.17.7 installed: https://go.dev/, or check by go version.
+
+For Applications utilizing the MR library, we load the applications as plugins, see https://pkg.go.dev/plugin. Note that till now Golang plugin only supports Linux, MacOS and FreeBSD. Go plugin supports the independent publication of new features and applications.
+To build the plugin, for instance, we wish to run word count applications by MR library, we first cd into the directory src/main and run
+>> go build -race -buildmode=plugin ../mrapps/wc.go
+This will give you a fresh built wc.so file, and we can use this wc.so file to build the MR package.
+
+First, we run the master node…
+>> go run -race mrcoordinator.go pg-*.txt
+Then we can spawn the worker process… 
+>> go run -race mrworker.go wc.so pg*.txt
+
+To test, run in src/main$: bash test.sh This generates all the tests 
+
+Check Report's Section 1 and 4 for more details.
+
